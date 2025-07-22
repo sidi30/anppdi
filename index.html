@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANPPDI - Association Nigérienne pour la Promotion des Personnes Déficientes Intellectuelles</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',  // blue-500
+                        secondary: '#8b5cf6', // violet-500
+                        accent: '#f59e0b',   // yellow-500
+                        light: '#f8fafc',    // slate-50
+                        dark: '#1e293b'      // slate-800
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-image {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1524179091875-bf99a9a6af57?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #000;
+            color: white;
+            padding: 8px;
+            z-index: 100;
+        }
+        
+        .skip-link:focus {
+            top: 0;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .text-balance {
+            text-wrap: balance;
+        }
+        
+        /* Accessible focus styles */
+        a:focus, button:focus, input:focus, textarea:focus, select:focus {
+            outline: 3px solid #f59e0b;
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body class="bg-light text-dark">
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+    
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="">
+                     <img src="images/logo.png" 
+                             alt="Logo ANPPDI"
+                             class="w-10 h-10 object-contain">
+                </div>
+                <a href="#" class="text-xl font-bold text-primary">
+                    <span class="hidden md:inline">ANPPDI</span>
+                    <span class="md:hidden">ANPPDI</span>
+                </a>
+            </div>
+            
+            <button id="menu-toggle" class="md:hidden text-primary focus:outline-none" aria-label="Menu" aria-expanded="false">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="font-medium hover:text-primary transition">Accueil</a>
+                <a href="#about" class="font-medium hover:text-primary transition">Qui sommes-nous ?</a>
+                <a href="#actions" class="font-medium hover:text-primary transition">Nos actions</a>
+                <a href="#get-involved" class="font-medium hover:text-primary transition">S'impliquer</a>
+                <a href="#donate" class="font-medium hover:text-primary transition">Faire un don</a>
+                <a href="#contact" class="font-medium hover:text-primary transition">Contact</a>
+            </nav>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white w-full px-4 py-2 shadow-lg">
+            <a href="#home" class="block py-2 hover:text-primary">Accueil</a>
+            <a href="#about" class="block py-2 hover:text-primary">Qui sommes-nous ?</a>
+            <a href="#actions" class="block py-2 hover:text-primary">Nos actions</a>
+            <a href="#get-involved" class="block py-2 hover:text-primary">S'impliquer</a>
+            <a href="#donate" class="block py-2 hover:text-primary">Faire un don</a>
+            <a href="#contact" class="block py-2 hover:text-primary">Contact</a>
+        </div>
+    </header>
+    
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="hero-image min-h-[70vh] flex items-center justify-center text-white">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 text-balance">
+                    Pour une éducation inclusive, équitable et accessible à tous, sans exception.
+                </h1>
+                <p class="text-xl mb-8 max-w-3xl mx-auto">
+                    L'ANPPDI œuvre depuis 1989 pour la promotion des droits et l'inclusion des personnes déficientes intellectuelles au Niger.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#donate" class="bg-accent hover:bg-yellow-600 text-white font-bold py-3 px-6 rounded-full transition">
+                        Faire un don
+                    </a>
+                    <a href="#get-involved" class="bg-primary hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full transition">
+                        Rejoindre l'association
+                    </a>
+                    <a href="#actions" class="bg-secondary hover:bg-violet-600 text-white font-bold py-3 px-6 rounded-full transition">
+                        Nos actions
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- About Section -->
+        <section id="about" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4">Qui sommes-nous ?</h2>
+                    <div class="w-20 h-1 bg-primary mx-auto"></div>
+                </div>
+                
+                <div class="flex flex-col lg:flex-row gap-12 items-center">
+                    <div class="lg:w-1/2">
+                        <img src="images/papa.jpg" 
+                             alt="Enfants en situation de handicap participant à une activité éducative"
+                             class="rounded-lg shadow-xl w-full h-auto">
+                    </div>
+                    
+                    <div class="lg:w-1/2">
+                        <div class="bg-primary/10 p-6 rounded-lg mb-6">
+                            <h3 class="text-xl font-bold mb-3 text-primary">Notre mission</h3>
+                            <p>
+                                Promouvoir les droits et l'inclusion sociale des personnes déficientes intellectuelles à travers l'éducation, la réadaptation, la formation professionnelle et la sensibilisation.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-secondary/10 p-6 rounded-lg mb-6">
+                            <h3 class="text-xl font-bold mb-3 text-secondary">Notre vision</h3>
+                            <p>
+                                Une société nigérienne inclusive où chaque personne déficiente intellectuelle peut réaliser son plein potentiel et vivre dans la dignité.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-accent/10 p-6 rounded-lg">
+                            <h3 class="text-xl font-bold mb-3 text-accent">Notre histoire</h3>
+                            <p>
+                                Créée en 1989 et officiellement reconnue par l'arrêté N°000523/MI/D/DGAPJ/DLP du 02 mai 2022, l'ANPPDI est une référence dans la défense des droits des personnes déficientes intellectuelles au Niger.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Actions Section -->
+        <section id="actions" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4">Nos actions</h2>
+                    <div class="w-20 h-1 bg-primary mx-auto"></div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Action 1 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition duration-300">
+                        <img src="images/enfant-education.png" 
+                             alt="Enfants en classe inclusive" 
+                             class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3 text-primary">Éducation inclusive</h3>
+                            <p class="mb-4">
+                                Nous œuvrons pour l'intégration des enfants déficients intellectuels dans les écoles ordinaires avec un accompagnement adapté.
+                            </p>
+                            <a href="#" class="text-primary font-medium hover:underline">En savoir plus →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Action 2 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition duration-300">
+                        <img src="images/femme-atelier.jpg" 
+                             alt="Formation professionnelle" 
+                             class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3 text-secondary">Formation professionnelle</h3>
+                            <p class="mb-4">
+                                Programmes de réadaptation et de formation professionnelle adaptés pour favoriser l'autonomie des adultes déficients intellectuels.
+                            </p>
+                            <a href="#" class="text-secondary font-medium hover:underline">En savoir plus →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Action 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition duration-300">
+                        <img src="images/sensibilisation.jpg" 
+                             alt="Séance de sensibilisation" 
+                             class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3 text-accent">Sensibilisation</h3>
+                            <p class="mb-4">
+                                Campagnes de sensibilisation pour changer les regards sur la déficience intellectuelle et promouvoir l'inclusion.
+                            </p>
+                            <a href="#" class="text-accent font-medium hover:underline">En savoir plus →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Get Involved Section -->
+        <section id="get-involved" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4">S'impliquer</h2>
+                    <div class="w-20 h-1 bg-primary mx-auto"></div>
+                </div>
+                
+                <div class="flex flex-col lg:flex-row gap-12">
+                    <div class="lg:w-1/2">
+                        <h3 class="text-2xl font-bold mb-6">Devenez membre de l'ANPPDI</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-primary/10 p-3 rounded-full mr-4">
+                                    <i class="fas fa-users text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">Membres actifs</h4>
+                                    <p>Parents et professionnels engagés dans la vie associative et les actions sur le terrain.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-secondary/10 p-3 rounded-full mr-4">
+                                    <i class="fas fa-hand-holding-heart text-secondary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">Membres bienfaiteurs</h4>
+                                    <p>Personnes ou organisations soutenant financièrement ou matériellement nos actions.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-accent/10 p-3 rounded-full mr-4">
+                                    <i class="fas fa-star text-accent"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">Membres d'honneur</h4>
+                                    <p>Personnalités ayant rendu des services exceptionnels à la cause des personnes déficientes intellectuelles.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:w-1/2">
+                        <div class="bg-gray-50 p-8 rounded-lg shadow-md">
+                            <h3 class="text-2xl font-bold mb-6">Formulaire d'adhésion</h3>
+                            
+                            <form id="membership-form" class="space-y-4">
+                                <div>
+                                    <label for="name" class="block font-medium mb-1">Nom complet</label>
+                                    <input type="text" id="name" name="name" required 
+                                           class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                                </div>
+                                
+                                <div>
+                                    <label for="email" class="block font-medium mb-1">Email</label>
+                                    <input type="email" id="email" name="email" required 
+                                           class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                                </div>
+                                
+                                <div>
+                                    <label for="phone" class="block font-medium mb-1">Téléphone</label>
+                                    <input type="tel" id="phone" name="phone" 
+                                           class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                                </div>
+                                
+                                <div>
+                                    <label for="member-type" class="block font-medium mb-1">Type de membre</label>
+                                    <select id="member-type" name="member-type" required 
+                                            class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                                        <option value="">Sélectionnez...</option>
+                                        <option value="active">Membre actif</option>
+                                        <option value="benefactor">Membre bienfaiteur</option>
+                                        <option value="honorary">Membre d'honneur</option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <label for="message" class="block font-medium mb-1">Message (optionnel)</label>
+                                    <textarea id="message" name="message" rows="3" 
+                                              class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+                                </div>
+                                
+                                <button type="submit" class="w-full bg-primary hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition">
+                                    Envoyer la demande
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonials -->
+                <div class="mt-16">
+                    <h3 class="text-2xl font-bold mb-8 text-center">Témoignages</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+                                    <i class="fas fa-user text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">Aminatou S.</h4>
+                                    <p class="text-sm text-gray-600">Mère d'un enfant déficient intellectuel</p>
+                                </div>
+                            </div>
+                            <p class="italic">
+                                "Grâce à l'ANPPDI, mon fils a pu intégrer une école ordinaire avec un accompagnement adapté. Aujourd'hui, il apprend à lire et à écrire, ce que je n'osais même pas espérer."
+                            </p>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center mr-4">
+                                    <i class="fas fa-user-tie text-secondary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">Dr. Boubacar S.</h4>
+                                    <p class="text-sm text-gray-600">Membre bienfaiteur</p>
+                                </div>
+                            </div>
+                            <p class="italic">
+                                "Soutenir l'ANPPDI, c'est contribuer à bâtir une société plus juste et inclusive. Leur travail sur le terrain est remarquable et leur transparence exemplaire."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Donate Section -->
+        <section id="donate" class="py-16 bg-primary text-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4">Faire un don</h2>
+                    <div class="w-20 h-1 bg-white mx-auto"></div>
+                </div>
+                
+                <div class="flex flex-col lg:flex-row gap-12">
+                    <div class="lg:w-1/2">
+                        <h3 class="text-2xl font-bold mb-6">Votre soutien fait la différence</h3>
+                        
+                        <p class="mb-6">
+                            Chaque contribution permet de financer nos programmes d'éducation inclusive, de formation professionnelle et de sensibilisation. 
+                            Grâce à vous, nous pouvons offrir un avenir meilleur aux personnes déficientes intellectuelles au Niger.
+                        </p>
+                        
+                        <div class="bg-white/10 p-6 rounded-lg mb-6">
+                            <h4 class="font-bold mb-3 text-xl">Transparence et impact</h4>
+                            <p>
+                                Nous nous engageons à utiliser chaque don de manière optimale et à rendre compte régulièrement de l'utilisation des fonds.
+                            </p>
+                        </div>
+                        
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div class="bg-white/10 p-4 rounded-lg">
+                                <i class="fas fa-graduation-cap text-2xl mb-2"></i>
+                                <h4 class="font-bold mb-1">Éducation</h4>
+                                <p class="text-sm">Financez une année scolaire pour un enfant</p>
+                            </div>
+                            
+                            <div class="bg-white/10 p-4 rounded-lg">
+                                <i class="fas fa-briefcase-medical text-2xl mb-2"></i>
+                                <h4 class="font-bold mb-1">Réadaptation</h4>
+                                <p class="text-sm">Soutenez nos programmes thérapeutiques</p>
+                            </div>
+                            
+                            <div class="bg-white/10 p-4 rounded-lg">
+                                <i class="fas fa-chalkboard-teacher text-2xl mb-2"></i>
+                                <h4 class="font-bold mb-1">Formation</h4>
+                                <p class="text-sm">Financez une formation professionnelle</p>
+                            </div>
+                            
+                            <div class="bg-white/10 p-4 rounded-lg">
+                                <i class="fas fa-bullhorn text-2xl mb-2"></i>
+                                <h4 class="font-bold mb-1">Sensibilisation</h4>
+                                <p class="text-sm">Aidez-nous à changer les mentalités</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:w-1/2">
+                        <div class="bg-white text-dark p-8 rounded-lg shadow-lg">
+                            <h3 class="text-2xl font-bold mb-6">Faites un don maintenant</h3>
+                            
+                            <form id="donation-form" class="space-y-4">
+                                <div>
+                                    <label for="donation-amount" class="block font-medium mb-1">Montant (FCFA)</label>
+                                    <input type="number" id="donation-amount" name="amount" min="1000" step="1000" required 
+                                           class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                                </div>
+                                
+                                <div class="grid grid-cols-3 gap-2 mb-4">
+                                    <button type="button" data-amount="5000" class="donation-option bg-gray-100 hover:bg-primary hover:text-white py-2 rounded transition">
+                                        5 000 F
+                                    </button>
+                                    <button type="button" data-amount="10000" class="donation-option bg-gray-100 hover:bg-primary hover:text-white py-2 rounded transition">
+                                        10 000 F
+                                    </button>
+                                    <button type="button" data-amount="25000" class="donation-option bg-gray-100 hover:bg-primary hover:text-white py-2 rounded transition">
+                                        25 000 F
+                                    </button>
+                                </div>
+                                
+                                <div>
+                                    <label for="donation-type" class="block font-medium mb-1">Type de don</label>
+                                    <select id="donation-type" name="type" required 
+                                            class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                                        <option value="">Sélectionnez...</option>
+                                        <option value="one-time">Don ponctuel</option>
+                                        <option value="monthly">Don mensuel</option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <label for="donor-name" class="block font-medium mb-1">Nom complet</label>
+                                    <input type="text" id="donor-name" name="name" required 
+                                           class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                                </div>
+                                
+                                <div>
+                                    <label for="donor-email" class="block font-medium mb-1">Email</label>
+                                    <input type="email" id="donor-email" name="email" required 
+                                           class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                                </div>
+                                
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="anonymous" name="anonymous" 
+                                           class="mr-2 h-5 w-5 text-primary focus:ring-primary">
+                                    <label for="anonymous">Rester anonyme</label>
+                                </div>
+                                
+                                <button type="submit" class="w-full bg-primary hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition">
+                                    Faire un don
+                                </button>
+                            </form>
+                            
+                            <div class="mt-6 text-sm text-gray-600">
+                                <p>Vous pouvez aussi nous soutenir par :</p>
+                                <ul class="list-disc pl-5 mt-2 space-y-1">
+                                    <li>Transfert mobile : +227 94 19 22 91</li>
+                                    <li>Virement bancaire (coordonnées sur demande)</li>
+                                    <li>Dons en nature (matériel scolaire, équipements)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- News Section -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4">Actualités</h2>
+                    <div class="w-20 h-1 bg-primary mx-auto"></div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- News 1 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition duration-300">
+                        <img src="images/ensemble.jpg" 
+                             alt="Atelier de sensibilisation" 
+                             class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <div class="flex items-center text-sm text-gray-500 mb-2">
+                                <i class="far fa-calendar-alt mr-2"></i>
+                                <span>15 juin 2023</span>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">Atelier de sensibilisation</h3>
+                            <p class="mb-4">
+                                L'ANPPDI a organisé un atelier de sensibilisation sur la déficience intellectuelle à l'intention des enseignants de Niamey.
+                            </p>
+                            <a href="#" class="text-primary font-medium hover:underline">Lire la suite →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- News 2 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition duration-300">
+                        <img src="images/formation-enseignant.jpeg" 
+                             alt="Formation des éducateurs" 
+                             class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <div class="flex items-center text-sm text-gray-500 mb-2">
+                                <i class="far fa-calendar-alt mr-2"></i>
+                                <span>2 mai 2023</span>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">Formation des éducateurs</h3>
+                            <p class="mb-4">
+                                Session de formation sur les pédagogies adaptées pour 30 éducateurs spécialisés venus de toutes les régions du Niger.
+                            </p>
+                            <a href="#" class="text-primary font-medium hover:underline">Lire la suite →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- News 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition duration-300">
+                        <img src="images/atelier.jpg" 
+                             alt="Assemblée générale" 
+                             class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <div class="flex items-center text-sm text-gray-500 mb-2">
+                                <i class="far fa-calendar-alt mr-2"></i>
+                                <span>12 mars 2023</span>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">Assemblée générale</h3>
+                            <p class="mb-4">
+                                L'ANPPDI a tenu son assemblée générale annuelle pour faire le bilan des actions et définir les priorités pour l'année à venir.
+                            </p>
+                            <a href="#" class="text-primary font-medium hover:underline">Lire la suite →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <a href="#" class="inline-block bg-primary hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition">
+                        Voir toutes les actualités
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Resources Section -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4">Ressources</h2>
+                    <div class="w-20 h-1 bg-primary mx-auto"></div>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Legal -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <div class="bg-primary/10 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                            <i class="fas fa-gavel text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Cadre juridique</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-file-alt text-primary mr-2 mt-1"></i>
+                                <span>Loi n°2019-62 sur la protection des personnes handicapées</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-file-alt text-primary mr-2 mt-1"></i>
+                                <span>Décret du 12 juillet 2021 portant application</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-file-alt text-primary mr-2 mt-1"></i>
+                                <span>Convention relative aux droits des personnes handicapées (CDPH)</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- ODD -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <div class="bg-secondary/10 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                            <i class="fas fa-globe-africa text-secondary"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Objectifs de développement durable</h3>
+                        <div class="flex items-start mb-4">
+                            <span class="bg-secondary text-white font-bold text-xl px-3 py-1 rounded mr-3">4</span>
+                            <div>
+                                <h4 class="font-bold">ODD 4 : Éducation de qualité</h4>
+                                <p class="text-sm">Assurer l'accès de tous à une éducation de qualité, sur un pied d'égalité</p>
+                            </div>
+                        </div>
+                        <p>
+                            L'ANPPDI contribue activement à la réalisation de cet objectif au Niger en promouvant l'éducation inclusive.
+                        </p>
+                    </div>
+                    
+                    <!-- Downloads -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <div class="bg-accent/10 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                            <i class="fas fa-download text-accent"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Documents utiles</h3>
+                        <ul class="space-y-3">
+                            <li>
+                                <a href="documents/STATUTS bon ANPPDI.pdf" target= "_blank" class="flex items-center text-accent hover:underline">
+                                    <i class="fas fa-file-pdf mr-2"></i>
+                                    <span>Brochure de présentation ANPPDI</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="documents/REGLEMENT INTERIEUR bon. ANPPDI.pdf" target= "_blank"  class="flex items-center text-accent hover:underline">
+                                    <i class="fas fa-file-word mr-2"></i>
+                                    <span>Reglement interieur ANPPDI</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target= "_blank" class="flex items-center text-accent hover:underline">
+                                    <i class="fas fa-file-powerpoint mr-2"></i>
+                                    <span>Présentation sur la déficience intellectuelle</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 bg-gray-100">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4">Contactez-nous</h2>
+                    <div class="w-20 h-1 bg-primary mx-auto"></div>
+                </div>
+                
+                <div class="flex flex-col lg:flex-row gap-12">
+                    <div class="lg:w-1/2">
+                        <div class="bg-white p-8 rounded-lg shadow-md">
+                            <h3 class="text-2xl font-bold mb-6">Envoyez-nous un message</h3>
+                            
+                            <form id="contact-form" class="space-y-4">
+                                <div>
+                                    <label for="contact-name" class="block font-medium mb-1">Nom complet</label>
+                                    <input type="text" id="contact-name" name="name" required 
+                                           class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                                </div>
+                                
+                                <div>
+                                    <label for="contact-email" class="block font-medium mb-1">Email</label>
+                                    <input type="email" id="contact-email" name="email" required 
+                                           class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                                </div>
+                                
+                                <div>
+                                    <label for="contact-subject" class="block font-medium mb-1">Sujet</label>
+                                    <input type="text" id="contact-subject" name="subject" required 
+                                           class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                                </div>
+                                
+                                <div>
+                                    <label for="contact-message" class="block font-medium mb-1">Message</label>
+                                    <textarea id="contact-message" name="message" rows="5" required 
+                                              class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+                                </div>
+                                
+                                <button type="submit" class="w-full bg-primary hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition">
+                                    Envoyer le message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:w-1/2">
+                        <div class="bg-primary text-white p-8 rounded-lg shadow-md h-full">
+                            <h3 class="text-2xl font-bold mb-6">Nos coordonnées</h3>
+                            
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <div class="bg-white/20 p-3 rounded-full mr-4">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold mb-1">Adresse</h4>
+                                        <p>Niamey, Niger</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="bg-white/20 p-3 rounded-full mr-4">
+                                        <i class="fas fa-phone"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold mb-1">Téléphone</h4>
+                                        <p>+227 94 19 22 91</p>
+                                        <p>+227 96 97 63 83</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="bg-white/20 p-3 rounded-full mr-4">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold mb-1">Email</h4>
+                                        <p>anppdi.niger@gmail.com</p>
+                                        <p>halimatoudabougui@gmail.com</p>
+                                        <p>isidimayaki@gmail.com</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="bg-white/20 p-3 rounded-full mr-4">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold mb-1">Horaires</h4>
+                                        <p>Lundi - Vendredi : 8h - 17h</p>
+                                        <p>Samedi : 9h - 13h</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-8">
+                                <h4 class="font-bold mb-4">Suivez-nous</h4>
+                                <div class="flex space-x-4">
+                                    <a href="#" aria-label="Facebook" class="bg-white/20 hover:bg-white/30 p-3 rounded-full transition">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="#" aria-label="Twitter" class="bg-white/20 hover:bg-white/30 p-3 rounded-full transition">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                    <a href="#" aria-label="Instagram" class="bg-white/20 hover:bg-white/30 p-3 rounded-full transition">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                    <a href="#" aria-label="YouTube" class="bg-white/20 hover:bg-white/30 p-3 rounded-full transition">
+                                        <i class="fab fa-youtube"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="bg-primary rounded-full p-2">
+                            <i class="fas fa-medal text-white"></i>
+                        </div>
+                        <span class="text-xl font-bold">ANPPDI</span>
+                    </div>
+                    <p class="mb-4">
+                        Association Nigérienne pour la Promotion des Personnes Déficientes Intellectuelles.
+                    </p>
+                    <p>
+                        Reconnue par l'arrêté N°000523/MI/D/DGAPJ/DLP du 02 mai 2022.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Liens rapides</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-primary transition">Accueil</a></li>
+                        <li><a href="#about" class="hover:text-primary transition">Qui sommes-nous ?</a></li>
+                        <li><a href="#actions" class="hover:text-primary transition">Nos actions</a></li>
+                        <li><a href="#get-involved" class="hover:text-primary transition">S'impliquer</a></li>
+                        <li><a href="#donate" class="hover:text-primary transition">Faire un don</a></li>
+                        <li><a href="#contact" class="hover:text-primary transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Ressources</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-primary transition">Actualités</a></li>
+                        <li><a href="#" class="hover:text-primary transition">Documents utiles</a></li>
+                        <li><a href="#" class="hover:text-primary transition">Cadre juridique</a></li>
+                        <li><a href="#" class="hover:text-primary transition">Objectifs de développement durable</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Newsletter</h3>
+                    <p class="mb-4">
+                        Abonnez-vous à notre newsletter pour recevoir nos dernières actualités.
+                    </p>
+                    <form class="flex">
+                        <input type="email" placeholder="Votre email" required 
+                               class="px-4 py-2 text-dark rounded-l-lg focus:outline-none w-full">
+                        <button type="submit" class="bg-primary hover:bg-blue-600 px-4 py-2 rounded-r-lg transition">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Social Media Links -->
+            <div class="py-6 border-t border-gray-700 flex flex-col md:flex-row justify-center items-center">
+                <div class="text-center mb-4 md:mb-0 md:mr-8">
+                    <h3 class="text-lg font-bold">Suivez-nous sur les réseaux sociaux</h3>
+                </div>
+                <div class="flex space-x-8">
+                    <a href="https://www.facebook.com/anppdi" target="_blank" rel="noopener" class="hover:text-primary transition flex flex-col items-center" aria-label="Facebook">
+                        <i class="fab fa-facebook text-3xl mb-1"></i>
+                        <span class="text-sm">Facebook</span>
+                    </a>
+                    <a href="https://www.instagram.com/anppdi" target="_blank" rel="noopener" class="hover:text-primary transition flex flex-col items-center" aria-label="Instagram">
+                        <i class="fab fa-instagram text-3xl mb-1"></i>
+                        <span class="text-sm">Instagram</span>
+                    </a>
+                    <a href="https://chat.whatsapp.com/anppdi" target="_blank" rel="noopener" class="hover:text-primary transition flex flex-col items-center" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp text-3xl mb-1"></i>
+                        <span class="text-sm">WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="pt-6 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center">
+                <p>
+                    &copy; 2023 ANPPDI. Tous droits réservés.
+                </p>
+                
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-primary transition">Mentions légales</a>
+                    <a href="#" class="hover:text-primary transition">Politique de confidentialité</a>
+                    <a href="#" class="hover:text-primary transition">Accessibilité</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to top button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.setAttribute('aria-expanded', !expanded);
+            mobileMenu.classList.toggle('hidden');
+            menuToggle.innerHTML = expanded 
+                ? '<i class="fas fa-bars text-2xl"></i>' 
+                : '<i class="fas fa-times text-2xl"></i>';
+        });
+        
+        // Donation amount buttons
+        const donationOptions = document.querySelectorAll('.donation-option');
+        const donationAmountInput = document.getElementById('donation-amount');
+        
+        donationOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                const amount = option.getAttribute('data-amount');
+                donationAmountInput.value = amount;
+                
+                // Update active state
+                donationOptions.forEach(opt => {
+                    opt.classList.remove('bg-primary', 'text-white');
+                    opt.classList.add('bg-gray-100');
+                });
+                
+                option.classList.remove('bg-gray-100');
+                option.classList.add('bg-primary', 'text-white');
+            });
+        });
+        
+        // Form submissions (prevent default for demo)
+        document.getElementById('membership-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Merci pour votre demande d\'adhésion ! Nous vous contacterons bientôt.');
+            e.target.reset();
+        });
+        
+        document.getElementById('donation-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const amount = document.getElementById('donation-amount').value;
+            alert(`Merci pour votre don de ${amount} FCFA ! Votre soutien est précieux.`);
+            e.target.reset();
+        });
+        
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Merci pour votre message ! Nous vous répondrons dans les plus brefs délais.');
+            e.target.reset();
+        });
+        
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        menuToggle.click();
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
